@@ -138,7 +138,7 @@ public class StudentDaoImpl implements StudentDao{
 			StudentEntity stdentity=session.get(StudentEntity.class, entity.getStudId());
 			return stdentity;
 		} catch (Exception e) {
-		   
+			
 		}finally {
 			HibernateUtil.cleanResources(session, tr);
 		}
