@@ -78,5 +78,11 @@ public class StudentController {
 		return new ResponseEntity("No student found of given id...",HttpStatus.OK);
 
 	}
+	
+//	@PostMapping("/create-student-profile")
+//	public void createStudentProfile(@RequestBody )
+//	{
+//		
+//	}
 
 }

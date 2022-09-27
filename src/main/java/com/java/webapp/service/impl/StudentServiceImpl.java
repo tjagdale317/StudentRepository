@@ -54,11 +54,11 @@ public class StudentServiceImpl implements StudentServices {
 		StudentEntity entity = stdDao.getStudentById(studId);
 		return studEntityToBean(entity);
 	}
-	
+
 	@Override
 	public StudentBean getStudentByName(String studName) {
-		//StudentEntity entity = stdDao.getStudentByName(studName);
-		//return studEntityToBean(entity);
+		// StudentEntity entity = stdDao.getStudentByName(studName);
+		// return studEntityToBean(entity);
 		return null;
 	}
 
@@ -94,26 +94,25 @@ public class StudentServiceImpl implements StudentServices {
 
 	@Override
 	public StudentBean updateStudent(StudentBean bean, int studId) {
-		List<StudentEntity> studList=stdDao.getListOfStudent();
-		System.out.println("list-----"+studList);
-				for (StudentEntity entity: studList) {
-					if(entity.getStudId()==studId) {
-						
-						entity.setStudId(bean.getStudId());
-						entity.setStudName(bean.getStudName());
-						entity.setStudEmail(bean.getStudEmail());
-						entity.setStudFees(bean.getStudFees());
-						entity.setStudGender(bean.getStudGender());
-						entity.setStudAddress(bean.getStudAddress());
-			
-						return studEntityToBean(stdDao.saveUpdatedStudent(entity));
+		List<StudentEntity> studList = stdDao.getListOfStudent();
+		
+		
+		System.out.println("list-----" + studList);
+		for (StudentEntity entity : studList) {
+			if (entity.getStudId() == studId) {
 
-					}
-				}
-				return bean;
+				entity.setStudId(bean.getStudId());
+				entity.setStudName(bean.getStudName());
+				entity.setStudEmail(bean.getStudEmail());
+				entity.setStudFees(bean.getStudFees());
+				entity.setStudGender(bean.getStudGender());
+				entity.setStudAddress(bean.getStudAddress());
+
+				return studEntityToBean(stdDao.saveUpdatedStudent(entity));
+
 			}
-
-	
-	
+		}
+		return bean;
+	}
 
 }
