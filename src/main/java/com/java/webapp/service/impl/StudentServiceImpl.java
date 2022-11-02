@@ -101,7 +101,7 @@ public class StudentServiceImpl implements StudentServices {
 		for (StudentEntity entity : studList) {
 			if (entity.getStudId() == studId) {
 
-				entity.setStudId(bean.getStudId());
+				//entity.setStudId(bean.getStudId());
 				entity.setStudName(bean.getStudName());
 				entity.setStudEmail(bean.getStudEmail());
 				entity.setStudFees(bean.getStudFees());
